@@ -800,7 +800,7 @@ namespace PingCastle
             }
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
             client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-            client.Headers.Add(HttpRequestHeader.UserAgent, "PingCastle " + version.ToString(4));
+            client.Headers.Add(HttpRequestHeader.Headers["User-Agent"].ToString(), "PingCastle " + version.ToString(4));
             //client.Headers.Add("Authorization", token);
             string token;
             byte[] answer = null;
@@ -869,7 +869,7 @@ namespace PingCastle
             byte[] answer = null;
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
             client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-            client.Headers.Add(HttpRequestHeader.UserAgent, "PingCastle " + version.ToString(4));
+            client.Headers.Add(HttpRequestHeader.Headers["User-Agent"].ToString(), "PingCastle " + version.ToString(4));
             try
             {
                 Trace.WriteLine("using filename:" + filename);
@@ -910,7 +910,7 @@ namespace PingCastle
         {
             byte[] answer = null;
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
-            client.Headers.Add(HttpRequestHeader.UserAgent, "PingCastle " + version.ToString(4));
+            client.Headers.Add(HttpRequestHeader.Headers["User-Agent"].ToString(), "PingCastle " + version.ToString(4));
             //client.Headers.Add(HttpRequestHeader.ContentType,  "multipart/form-data;
             try
             {
@@ -980,7 +980,7 @@ namespace PingCastle
         {
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
             client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-            client.Headers.Add(HttpRequestHeader.UserAgent, "PingCastle " + version.ToString(4));
+            client.Headers.Add(HttpRequestHeader.Headers["User-Agent"].ToString(), "PingCastle " + version.ToString(4));
             try
             {
                 string answer = client.DownloadString(Settings.apiEndpoint + "api/Agent/GetSettings");
